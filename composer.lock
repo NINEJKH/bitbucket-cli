@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c29164e197474fe830894deea3f46ed",
+    "content-hash": "6eff63e29c01d3c7877a6009ac011315",
     "packages": [
         {
             "name": "gentle/bitbucket-api",
@@ -307,7 +307,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.1.0"
+        "php": ">=5.6.0"
     },
     "platform-dev": []
 }
