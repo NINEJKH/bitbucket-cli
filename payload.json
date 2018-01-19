@@ -1,0 +1,9 @@
+{
+    "title": "just a test!",
+    "description": "foobar",
+    "destination": {
+        "branch": {
+            "name": "master"
+        }
+    }
+}

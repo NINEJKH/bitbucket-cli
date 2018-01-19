@@ -1,0 +1,8 @@
+/.buildpath
+/.project
+/.settings/
+
+/version.txt
+/bitbucket.phar
+
+/vendor/

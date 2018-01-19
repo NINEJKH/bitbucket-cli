@@ -1,0 +1,21 @@
+language: php
+
+matrix:
+  include:
+    - php: 7.2
+    - php: 7.1
+      env: DEPLOY=true
+
+sudo: false
+
+script: "./build.sh"
+
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: my141Ro0d++ChMEqF1lk6jMNI0VDguJMxdJ39A/x+snmxPBX79750vtdarvyEb3ZSE5oaPt6u3iVlhgK0PWI0wCg0hYkMA8qdIU7UB6pI500HmyVNA0X6kkloypDY6zFFOn7E7mtBT8jxl9+sQscw5Ihojny3Nn0ajXxgxkJbLDzXMZDiBUPUuAHrQ4e9OOfAEVhWj7E9yiP6AOu5xJZgXrh8pILQ3/uvkGLFujcbpjeZFk4wLVechJrj78Jc6uoX5CdgaIvlVnQIQGYEzom6A3ZdQaP72vfjaopaZ7cCV6e/Z2w05v0HkbbTMpsu/5amXoYVtQaeejhy1PTrFZIeczEM252N7T+MPDNKUX/ISNxb4nchliaIRnrREj6YeyiQMIy1x0cq9PkMkSpj/4v5AGy9pb5ZWuwWrkS/ncQi7fxdUq8Ir3guRFEUXlHlQml9iKTx1AqcmENgqgj/uh5dK6+FDe4d5wZsOopNCk18fv+eTs6jW9hTrCja9wyK3Esf/ovNEZ+HGQ7FqsM45+LlLuhSCBmydpDWsvM3q3So5XjH81VJvRb05sv3yQf4PO94SFFr7/08dG974nTZX27K/EL0yNKve892YCHQawI7QE8YMkpqq3mnZCZhVuwHZbT8gfBl8SjYsZNExscJEp+grOXRTBx8GznF+QZsD7F/Fw=
+  file: bitbucket.phar
+  on:
+    tags: true
+    condition: $DEPLOY = true
