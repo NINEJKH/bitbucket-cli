@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=5.6.0",
         "gentle/bitbucket-api": "^1.1",
         "symfony/console": "^4.0"
     },
