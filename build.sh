@@ -21,7 +21,6 @@ composer install \
   --no-interaction \
   --prefer-dist \
   --no-suggest \
-  --quiet \
   --verbose
 
 consolelog "composer cleanup"
