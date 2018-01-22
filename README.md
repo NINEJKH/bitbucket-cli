@@ -7,7 +7,7 @@ A bitbucket cli tool.
 ## Installation
 
 ```bash
-$ sudo curl -#fLo /usr/local/bin/bitbucket https://github.com/NINEJKH/bitbucket-cli/releases/download/0.0.2/bitbucket.phar && sudo chmod +x /usr/local/bin/bitbucket
+$ sudo curl -#fLo /usr/local/bin/bitbucket https://github.com/NINEJKH/bitbucket-cli/releases/download/0.0.3/bitbucket.phar && sudo chmod +x /usr/local/bin/bitbucket
 ```
 
 ## Auth
