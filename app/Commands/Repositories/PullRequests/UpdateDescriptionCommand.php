@@ -14,7 +14,7 @@ class UpdateDescriptionCommand extends PullRequestsCommand
     {
         $this
             ->setName('repositories:pullrequests:update:description')
-            ->setDescription('Get a specific pull request')
+            ->setDescription('Update a specific pull request description')
             ->addArgument('repo', InputArgument::REQUIRED, 'owner/repository_slug')
             ->addArgument('pull_request_id', InputArgument::REQUIRED, 'The id of the pull request.')
             ->addArgument('description', InputArgument::OPTIONAL, 'New description to set.')
@@ -23,12 +23,12 @@ class UpdateDescriptionCommand extends PullRequestsCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if ($input->hasArgument('description')) {
+        $description = null;
+
+        if (!empty($input->getArgument('description'))) {
             $description = $input->getArgument('description');
-        } elseif (ftell(STDIN) === 0) {
+        } elseif (ftell(STDIN) !== false) {
             $description = stream_get_contents(STDIN);
-        } else {
-            throw new RuntimeException('Empty description.');
         }
 
         if (empty($description)) {
