@@ -25,9 +25,8 @@ class UpdateDescriptionCommand extends PullRequestsCommand
     {
         $description = null;
 
-        if (!empty($input->getArgument('description'))) {
-            $description = $input->getArgument('description');
-        } elseif (ftell(STDIN) !== false) {
+        if ($description = $input->getArgument('description')) {
+        } elseif (ftell(STDIN) === 0) {
             $description = stream_get_contents(STDIN);
         }
 
