@@ -15,7 +15,7 @@ class UpdateCommand extends PullRequestsCommand
     {
         $this
             ->setName('repositories:pullrequests:update')
-            ->setDescription('Get a specific pull request')
+            ->setDescription('Update a specific pull request')
             ->addOption('file', 'f', InputOption::VALUE_OPTIONAL,'Path to JSON formatted input file')
             ->addArgument('repo', InputArgument::REQUIRED, 'owner/repository_slug')
             ->addArgument('pull_request_id', InputArgument::REQUIRED, 'The id of the pull request.')
