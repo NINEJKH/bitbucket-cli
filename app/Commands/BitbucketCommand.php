@@ -11,10 +11,13 @@ abstract class BitbucketCommand extends Command
     protected function throwApiResponseError(MessageInterface $message)
     {
         $error_message = $message->getContent();
+
         if (preg_match('~^{.*}$~', $error_message)) {
             $error_message = json_decode($error_message, true);
-            if (!empty($error_message['error'])) {
+            if (!empty($error_message['error']) && !empty($error_message['error']['detail'])) {
                 $error_message = sprintf('[%s]%s%s', $error_message['error']['message'], PHP_EOL, $error_message['error']['detail']);
+            } elseif (!empty($error_message['error'])) {
+                $error_message = sprintf('%s', $error_message['error']['message']);
             }
         }
 
