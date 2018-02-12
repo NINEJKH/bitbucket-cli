@@ -55,6 +55,11 @@ class UpdateDescriptionCommand extends PullRequestsCommand
             ]
         ];
 
+        if (!empty($current_pr['reviewers'])) {
+            $payload['reviewers'] = $current_pr['reviewers'];
+        }
+
+        $pull = $this->create();
         $pr = $pull->update($username, $repo_slug, $input->getArgument('pull_request_id'), $payload);
 
         if (!$pr->isOk()) {
